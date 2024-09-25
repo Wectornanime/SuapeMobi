@@ -1,0 +1,22 @@
+{
+    "setores": [
+        {
+            "id": 1,
+            "setor": "Comercial",
+            "Centro_Custo": "01C0024",
+            "responsavel": "João"
+        },
+        {
+            "id": 2,
+            "setor": "Financeiro",
+            "Centro_Custo": "01F0024",
+            "responsavel": "Pedro"
+        },
+        {
+            "id": 3,
+            "setor": "Tec da Informação",
+            "Centro_Custo": "01T0024",
+            "responsavel": "Tiago"
+        }
+    ]
+}

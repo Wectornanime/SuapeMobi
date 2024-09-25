@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Veículos Corporativos</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Selecione seu Veículo Corporativo</h1>
+<form id="reservaForm">
+    <label for="centroCusto">Centro de custo:</label>
+    <select id="centroCusto" name="centroCusto" required>
+        <option value="" disabled selected>Escolha um centro</option>
+    </select>
+
+    <label for="gestorAprovador">Gestor aprovador:</label>
+    <input type="text" id="gestorAprovador" name="gestorAprovador" readonly required>
+
+    <label for="motivo">Motivo da saída:</label>
+    <textarea id="motivo" name="motivo" placeholder="Digite o motivo de sua saída" maxlength="100" required></textarea>
+
+    <!-- <label for="horaSaida">Horário de Saída:</label>
+    <input type="time" id="horaSaida" name="horaSaida" required>
+
+    <label for="horaRetorno">Horário de Retorno:</label>
+    <input type="time" id="horaRetorno" name="horaRetorno" required> -->
+
+    <button type="submit">Confirmar Reserva</button>
+</form>
+
+<!-- Mensagem de confirmação que aparecerá após o envio -->
+<div id="mensagemSucesso" style="display: none;">
+    <h2>Sua solicitação foi enviada com sucesso!</h2>
+    <p>Obrigado por enviar sua reserva. Em breve você receberá uma confirmação.</p>
+</div>
+
+</body>
+</html>
