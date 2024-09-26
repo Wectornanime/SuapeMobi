@@ -70,14 +70,6 @@ async function registrarSolicitacao() {
     localStorage.setItem('dados', JSON.stringify(dados))
 }
 
-
-
-
-
-
-
-
-
 window.onload = function() {
     carregarSetores();
     

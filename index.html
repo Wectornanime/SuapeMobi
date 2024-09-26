@@ -11,18 +11,25 @@
             // Verifica se o usuário está autenticado (exemplo usando localStorage)
             const usuarioLogado = localStorage.getItem('usuarioLogado');
 
-            // Se não houver usuário logado, redireciona para login.html
-            if (!usuarioLogado) {
-                window.location.href = "login.html";
-            }
+            setTimeout(function() {
+                // Se não houver usuário logado, redireciona para login.html
+                if (!usuarioLogado) {
+                    window.location.href = "login.html";
+                } else {
+                    // Se o usuário estiver logado, você pode redirecionar para a página inicial ou onde desejar
+                    window.location.href = "home.html"; // Altere para a página desejada
+                }
+            }, 1500); // 1500 milissegundos = 1.5 segundos
         };
     </script>
 </head>
 
 <body>
-    <div class="splahscreen">
-        <img src="icone.png" alt="Icone da SplashScreen">
-        <img src="logo-nome.png" alt="Logo-nome da SplashScreen">
+    <div class="logo">
+        <img src="assets/icone.png" alt="Logo">
+    </div>
+    <div class="logomarca">
+        <img src="assets/logo_marca.png" alt="Logomarca">
     </div>
 </body>
 

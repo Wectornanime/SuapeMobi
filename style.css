@@ -1,20 +1,23 @@
-* {
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-}
-
-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #058614;
+    flex-direction: column;
 }
 
-.splahscreen {
-    margin: auto;
-    margin: 50px;
+div {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    margin-bottom: 20px; /* Espaço entre as imagens */
 }
 
 img {
-    width: 100%;
+    max-width: 75%; /* Ajuste o tamanho das imagens */
     height: auto;
 }
