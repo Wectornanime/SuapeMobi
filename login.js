@@ -16,12 +16,16 @@ function validarLogin(event) {
     
     // Busca um usuário correspondente no JSON
     const usuarioValido = usuarios.usuarios.find(user => user.username === username && user.password === password);
-    
     if (usuarioValido) {
         alert('Login realizado com sucesso!');
         localStorage.setItem('userId', usuarioValido.id)
-        // Redireciona para a página index.html
-        window.location.href = "reserve.html";
+        if (usuarioValido.perfil === "solicitante") {
+            // Redireciona para a página index.html
+            window.location.href = "reserve.html";
+        } else {
+            // Redireciona para a página index.html
+            window.location.href = "requisicoes.html";
+        }
     } else {
         // Mostra mensagem de erro se a validação falhar
         document.getElementById('mensagemErro').style.display = 'block';

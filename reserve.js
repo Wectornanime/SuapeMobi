@@ -63,7 +63,9 @@ async function registrarSolicitacao() {
         "user_id": Number(localStorage.getItem('userId')),
         "observacao": motivo.value,
         "aprovado": false,
-        "aprovador": gestorAprovador.value
+        "aprovador": gestorAprovador.value,
+        "data": "",
+        "hora": ""
     }
 
     dados.solicitacao.push(registro);
@@ -72,6 +74,11 @@ async function registrarSolicitacao() {
 
 window.onload = function() {
     carregarSetores();
+    const agora = new Date()
+    agora.setHours(agora.getHours() + 1);
+
+    document.querySelector('#data').value = agora.toISOString().split('T')[0]
+    document.querySelector('#hora').value = String(agora.getHours()).padStart(2, '0') + ':' + String(agora.getMinutes()).padStart(2, '0');
     
     // Adiciona o evento de mudança no select de setores
     const selectSetores = document.getElementById('centroCusto');

@@ -3,22 +3,26 @@
         {
             "id": 1,
             "username": "joao",
-            "password": "123"
+            "password": "123",
+            "perfil": "gestor"
         },
         {
             "id": 2,
             "username": "tiago",
-            "password": "123"
+            "password": "123",
+            "perfil": "gestor"
         },
         {
             "id": 3,
             "username": "pedro",
-            "password": "123"
+            "password": "123",
+            "perfil": "gestor"
         },
         {
             "id": 4,
             "username": "maria",
-            "password": "123"
+            "password": "123",
+            "perfil": "solicitante"
         }
     ]
 }

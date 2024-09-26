@@ -10,6 +10,7 @@ async function renderRequests() {
         await fetch('solicitacao.json')
         .then(async res => {
             dados = await res.json();
+            localStorage.setItem('dados', JSON.stringify(dados));
         });
     } else {
         dados = JSON.parse(local);
@@ -67,6 +68,8 @@ function showDetails(solicitacao) {
     <p><strong>Requisitante</strong>: ${users.usuarios.find(u => u.id === solicitacao.user_id).username}</p>
     <p><strong>Centro de custo</strong>: ${setores.setores.find(setor => setor.id === solicitacao.setor_id).setor}</p>
     <p><strong>Gestor aprovador</strong>: ${setores.setores.find(setor => setor.id === solicitacao.setor_id).responsavel}</p>
+    <p><strong>Data prevista</strong>: ${setores.setores.find(setor => setor.id === solicitacao.setor_id).data}</p>
+    <p><strong>Hora prevista</strong>: ${setores.setores.find(setor => setor.id === solicitacao.setor_id).hora}</p>
     <div>
         <label for="veiculos"><strong>Veiculo:</strong></label>
         <select id="veiculos" name="veiculos" required>
@@ -74,8 +77,11 @@ function showDetails(solicitacao) {
         </select>
     </div>
     <div>
-        <label for="autorizacao"><strong>Autorização:</strong></label>
-        <input type="checkbox" id="autorizacao" name="autorizacao" required>
+        <p><strong>Autorização:</strong></p>
+        <label for="sim">Sim</label>
+        <input type="radio" id="sim" name="autorizacao" value=true>
+        <label for="nao">Não</label>
+        <input type="radio" id="nao" name="autorizacao" value=false>
     </div>
 
     <button onclick="atualizaDados(${solicitacao.id})">Salvar</button>
@@ -93,7 +99,12 @@ function showDetails(solicitacao) {
         selectVeiculos.appendChild(option);
     });
 
-    document.getElementById('autorizacao').checked = solicitacao.aprovado;
+    const radios = document.querySelectorAll('input[name="autorizacao"]');
+    radios.forEach((radio) => {
+        if (radio.value.toString() == solicitacao.aprovado.toString()) {
+            radio.checked = true;
+        }
+    });
 
     details.style.display = 'block'; // Mostra os detalhes
 }
