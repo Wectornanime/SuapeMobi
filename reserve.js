@@ -58,7 +58,7 @@ async function registrarSolicitacao() {
 
     const registro = {
         "id": (dados.solicitacao.length + 1) | 0,
-        "veiculo_id": "",
+        "veiculo_id": 0,
         "setor_id": Number(centroCusto.value),
         "user_id": Number(localStorage.getItem('userId')),
         "observacao": motivo.value,

@@ -89,9 +89,7 @@ function showDetails(solicitacao) {
         const option = document.createElement('option');
         option.value = veiculo.id;
         option.textContent = veiculo.modelo;
-        if (solicitacao.veiculo_id === veiculo.id) {
-            option.selected = true;
-        }
+        option.selected = solicitacao.veiculo_id === veiculo.id;
         selectVeiculos.appendChild(option);
     });
 
