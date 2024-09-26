@@ -1,0 +1,13 @@
+{
+    "solicitacao": [
+        {
+            "id": 1,
+            "veiculo_id": "",
+            "setor_id": "",
+            "user_id": "",
+            "observacao": "",
+            "aprovado": false,
+            "aprovador": "admin"
+        }
+    ]
+}

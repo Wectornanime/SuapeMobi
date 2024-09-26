@@ -19,6 +19,7 @@ function validarLogin(event) {
     
     if (usuarioValido) {
         alert('Login realizado com sucesso!');
+        localStorage.setItem('userId', usuarioValido.id)
         // Redireciona para a página index.html
         window.location.href = "reserve.html";
     } else {

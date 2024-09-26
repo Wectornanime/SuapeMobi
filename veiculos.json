@@ -1,0 +1,19 @@
+{
+    "veiculos": [
+        {
+            "id": 1,
+            "modelo": "Toro",
+            "placa": "ABC-0001"
+        },
+        {
+            "id": 2,
+            "modelo": "Spin",
+            "placa": "ABC-0002"
+        },
+        {
+            "id": 3,
+            "modelo": "Polo",
+            "placa": "ABC-0003"
+        }
+    ]
+}

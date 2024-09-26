@@ -1,4 +1,6 @@
 let setores = [];
+let dados = []; 
+
 
 // Função para carregar os dados do JSON
 async function carregarSetores() {
@@ -30,13 +32,51 @@ function atualizarGestor() {
 }
 
 // Função para lidar com o envio do formulário
-function enviarFormulario(event) {
+async function enviarFormulario(event) {
+    registrarSolicitacao();
     event.preventDefault(); // Previne o comportamento padrão de envio do formulário
     
     // Oculta o formulário e exibe a mensagem de sucesso
     document.getElementById('reservaForm').style.display = 'none';
     document.getElementById('mensagemSucesso').style.display = 'block';
 }
+
+async function registrarSolicitacao() {
+    const local = localStorage.getItem('dados');
+    if (!local) {
+        await fetch('solicitacao.json')
+        .then(async res => {
+            dados = await res.json();
+        });
+    } else {
+        dados = JSON.parse(local);
+    }
+
+    const centroCusto = document.getElementById('centroCusto');
+    const gestorAprovador = document.getElementById('gestorAprovador');
+    const motivo = document.getElementById('motivo');
+
+    const registro = {
+        "id": (dados.solicitacao.length + 1) | 0,
+        "veiculo_id": "",
+        "setor_id": Number(centroCusto.value),
+        "user_id": Number(localStorage.getItem('userId')),
+        "observacao": motivo.value,
+        "aprovado": false,
+        "aprovador": gestorAprovador.value
+    }
+
+    dados.solicitacao.push(registro);
+    localStorage.setItem('dados', JSON.stringify(dados))
+}
+
+
+
+
+
+
+
+
 
 window.onload = function() {
     carregarSetores();
